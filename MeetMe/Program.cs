@@ -19,6 +19,7 @@ namespace MeetMe
             var host = CreateHostBuilder(args).Build();
 
             // http://www.binaryintellect.net/articles/5e180dfa-4438-45d8-ac78-c7cc11735791.aspx
+            // https://github.com/dotnet-architecture/eShopOnWeb/blob/master/src/Web/Startup.cs
             using (var scope = host.Services.CreateScope())
             {
                 var serviceProvider = scope.ServiceProvider;
