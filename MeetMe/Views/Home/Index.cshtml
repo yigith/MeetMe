@@ -1,8 +1,30 @@
-﻿@{
+﻿@model List<Meeting>
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Meet Me</h1>
+    <p>A website where you can meet me!</p>
+</div>
+
+<div class="row">
+    @foreach (var meeting in Model)
+    {
+        <div class="col-lg-6">
+            <div class="card flex-row-reverse mb-3">
+                <img src="~/img/@meeting.PhotoPath" class="meeting-img" alt="@meeting.Title">
+                <div class="card-body">
+                    <h5 class="card-title meeting-title">@meeting.Title</h5>
+                    <p class="card-text meeting-desc">
+                        @meeting.Description <br />
+                    </p>
+                    <p class="card-text">
+                        <strong>Place:</strong> @meeting.Place <br />
+                        <strong>Date:</strong> @meeting.MeetingTime
+                    </p>
+                </div>
+            </div>
+        </div>
+    }
 </div>

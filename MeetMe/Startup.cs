@@ -64,6 +64,12 @@ namespace MeetMe
 
             app.UseEndpoints(endpoints =>
             {
+                // https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/areas?view=aspnetcore-5.0
+                endpoints.MapAreaControllerRoute(
+                    name: "adminRoute",
+                    areaName: "Admin",
+                    pattern: "Admin/{controller=Dashboard}/{action=Index}/{id?}"
+                );
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
