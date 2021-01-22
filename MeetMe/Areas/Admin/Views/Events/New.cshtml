@@ -1,0 +1,81 @@
+﻿@model NewMeetingViewModel
+@{
+    ViewData["Title"] = "New Meeting";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card card-primary">
+            @*<div class="card-header">
+                    <h3 class="card-title">Quick Example</h3>
+                </div>*@
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form method="post" enctype="multipart/form-data">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label asp-for="Title"></label>
+                        <input asp-for="Title" class="form-control" placeholder="Title" />
+                        <span asp-validation-for="Title"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Description"></label>
+                        <textarea asp-for="Description" class="form-control" rows="2" placeholder="Description"></textarea>
+                        <span asp-validation-for="Description"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="MeetingTime">Meeting Time:</label>
+                        <div class="input-group date" id="meetingtimetd" data-target-input="nearest">
+                            <input asp-for="MeetingTime" type="text" class="form-control datetimepicker-input" data-target="#meetingtimetd" />
+                            <div class="input-group-append" data-target="#meetingtimetd" data-toggle="datetimepicker">
+                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                            </div>
+                        </div>
+                        <span asp-validation-for="MeetingTime"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Place"></label>
+                        <input asp-for="Place" class="form-control" placeholder="Place" />
+                        <span asp-validation-for="Place"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputFile">File input</label>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input asp-for="Photo" class="custom-file-input" id="exampleInputFile">
+                                <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                            </div>
+                            @*<div class="input-group-append">
+                                    <span class="input-group-text">Upload</span>
+                            </div>*@
+                        </div>
+                        <span asp-validation-for="Photo"></span>
+                    </div>
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+        <!-- /.card -->
+    </div>
+</div>
+
+@section scripts {
+    <partial name="_ValidationScriptsPartial" />
+    @*@await Html.PartialAsync("_ValidationScriptsPartial")*@
+    
+    <script>
+        bsCustomFileInput.init();
+
+        $("#meetingtimetd").datetimepicker({
+            icons: {
+                time: 'fas fa-clock'
+            },
+            //locale: 'tr',
+            format: 'DD.MM.YYYY HH:mm'
+        });
+    </script>
+}

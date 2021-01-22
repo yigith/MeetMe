@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\images\**" />
+    <Content Remove="wwwroot\images\**" />
+    <EmbeddedResource Remove="wwwroot\images\**" />
+    <None Remove="wwwroot\images\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.2" />
@@ -21,11 +28,9 @@
 
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Data\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Shared\" />
-    <Folder Include="wwwroot\images\" />
     <Folder Include="wwwroot\js\" />
     <Folder Include="wwwroot\lib\bootstrap\" />
     <Folder Include="wwwroot\lib\bootstrap\dist\js\" />
@@ -34,6 +39,158 @@
     <Folder Include="wwwroot\lib\jquery-validation\dist\" />
     <Folder Include="wwwroot\lib\jquery\" />
     <Folder Include="wwwroot\lib\jquery\dist\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\lib\admin\plugins\bs-custom-file-input\bs-custom-file-input.js" />
+    <None Include="wwwroot\lib\admin\plugins\bs-custom-file-input\bs-custom-file-input.js.map" />
+    <None Include="wwwroot\lib\admin\plugins\bs-custom-file-input\bs-custom-file-input.min.js" />
+    <None Include="wwwroot\lib\admin\plugins\bs-custom-file-input\bs-custom-file-input.min.js.map" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locales.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locales.min.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locales.min.js.map" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\af.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\ar-dz.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\ar-kw.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\ar-ly.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\ar-ma.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\ar-sa.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\ar-tn.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\ar.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\az.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\be.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\bg.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\bm.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\bn-bd.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\bn.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\bo.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\br.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\bs.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\ca.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\cs.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\cv.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\cy.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\da.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\de-at.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\de-ch.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\de.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\dv.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\el.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\en-au.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\en-ca.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\en-gb.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\en-ie.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\en-il.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\en-in.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\en-nz.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\en-SG.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\eo.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\es-do.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\es-mx.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\es-us.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\es.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\et.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\eu.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\fa.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\fi.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\fil.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\fo.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\fr-ca.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\fr-ch.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\fr.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\fy.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\ga.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\gd.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\gl.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\gom-deva.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\gom-latn.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\gu.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\he.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\hi.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\hr.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\hu.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\hy-am.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\id.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\is.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\it-ch.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\it.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\ja.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\jv.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\ka.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\kk.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\km.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\kn.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\ko.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\ku.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\ky.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\lb.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\lo.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\lt.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\lv.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\me.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\mi.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\mk.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\ml.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\mn.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\mr.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\ms-my.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\ms.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\mt.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\my.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\nb.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\ne.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\nl-be.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\nl.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\nn.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\oc-lnc.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\pa-in.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\pl.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\pt-br.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\pt.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\ro.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\ru.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\sd.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\se.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\si.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\sk.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\sl.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\sq.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\sr-cyrl.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\sr.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\ss.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\sv.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\sw.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\ta.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\te.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\tet.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\tg.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\th.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\tk.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\tl-ph.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\tlh.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\tr.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\tzl.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\tzm-latn.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\tzm.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\ug-cn.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\uk.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\ur.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\uz-latn.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\uz.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\vi.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\x-pseudo.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\yo.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\zh-cn.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\zh-hk.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\zh-mo.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\locale\zh-tw.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\moment-with-locales.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\moment-with-locales.min.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\moment-with-locales.min.js.map" />
+    <None Include="wwwroot\lib\admin\plugins\moment\moment.min.js" />
+    <None Include="wwwroot\lib\admin\plugins\moment\moment.min.js.map" />
+    <None Include="wwwroot\lib\admin\plugins\tempusdominus-bootstrap-4\js\tempusdominus-bootstrap-4.js" />
+    <None Include="wwwroot\lib\admin\plugins\tempusdominus-bootstrap-4\js\tempusdominus-bootstrap-4.min.js" />
   </ItemGroup>
 
 </Project>
