@@ -33,7 +33,9 @@
                     <td>@item.Description</td>
                     <td>@item.Place</td>
                     <td>@item.MeetingTime</td>
-                    <td>Edit | Delete</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> 
+                    | Delete</td>
                 </tr>
                 }
             </tbody>
