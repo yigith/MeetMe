@@ -1,4 +1,5 @@
 using MeetMe.Data;
+using MeetMe.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +29,10 @@ namespace MeetMe
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // asp.net uygulamasý için sadece bir adet HelperService örneði oluþur ve hep o kullanýlýr
+            services.AddSingleton<HelperService>();
+
+            // scope bazlý servis: her istek için yeni dbcontext oluþur
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));

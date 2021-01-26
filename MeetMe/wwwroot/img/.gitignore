@@ -3,5 +3,6 @@
 
 # bu dosyalar hariç
 !.gitignore
+!meeting.png
 !meeting1.jpg
 !meeting2.jpg

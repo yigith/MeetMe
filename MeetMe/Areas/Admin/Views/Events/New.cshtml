@@ -69,13 +69,17 @@
     
     <script>
         bsCustomFileInput.init();
+        var d = new Date();
+        d.setHours(12);
+        d.setMinutes(0);
 
         $("#meetingtimetd").datetimepicker({
             icons: {
                 time: 'fas fa-clock'
             },
             //locale: 'tr',
-            format: 'DD.MM.YYYY HH:mm'
+            format: 'DD.MM.YYYY HH:mm',
+            defaultDate: d
         });
     </script>
 }
