@@ -1,0 +1,41 @@
+﻿@model List<Meeting>
+@* https://fullcalendar.io/docs/initialize-globals-demo *@
+
+<div id="calendar"></div>
+
+@section styles {
+    <link href="~/lib/fullcalendar/main.min.css" rel="stylesheet" />
+}
+
+@section scripts {
+    <script src="~/lib/fullcalendar/main.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                initialDate: '@DateTime.Now.ToString("yyyy-MM-01")',
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                },
+                events: [
+                    // todo: meeting time zorunlu yapılacak
+                    @foreach (var meeting in Model.Where(x => x.MeetingTime != null))
+                    {
+                        <text>
+                        {
+                            title: '@Html.Raw(meeting.Title)',
+                            start: '@meeting.MeetingTime.Value.ToString("O")'
+                        },
+                        </text>
+                    }
+                ]
+            });
+
+            calendar.render();
+        });
+    </script>
+}
