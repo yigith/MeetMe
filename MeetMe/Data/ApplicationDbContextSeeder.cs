@@ -11,6 +11,7 @@ namespace MeetMe.Data
 {
     public static class ApplicationDbContextSeeder
     {
+
         // http://www.binaryintellect.net/articles/5e180dfa-4438-45d8-ac78-c7cc11735791.aspx
         public static async Task SeedRolesAndUsersAsync(
             RoleManager<IdentityRole> roleManager, 
@@ -62,6 +63,23 @@ namespace MeetMe.Data
             }
         }
 
+        private static void SeedMeetings(ApplicationDbContext db, int count)
+        {
+            int currentCount = db.Meetings.Count();
+
+            for (int i = currentCount + 1; i <= count; i++)
+            {
+                db.Meetings.Add(new Meeting()
+                {
+                    Title = "Meeting " + i,
+                    Description = "Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.",
+                    Place = "Sit Amet, Consectetur",
+                    MeetingTime = DateTime.Now.AddDays(-i)
+                });
+                db.SaveChanges();
+            }
+        }
+
         public static async Task<IHost> SeedAsync(this IHost host)
         {
             // http://www.binaryintellect.net/articles/5e180dfa-4438-45d8-ac78-c7cc11735791.aspx
@@ -78,6 +96,7 @@ namespace MeetMe.Data
                 if (env.IsDevelopment())
                 {
                     SeedMeetings(db);
+                    SeedMeetings(db, 121);
                 }
             }
             return host;

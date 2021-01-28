@@ -1,4 +1,4 @@
-﻿@model List<MeetingViewModel>
+﻿@model HomeViewModel
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -9,7 +9,7 @@
 </div>
 
 <div class="row">
-    @foreach (var meeting in Model)
+    @foreach (var meeting in Model.Meetings)
     {
         <div class="col-lg-6">
             <div class="card card-meeting flex-row-reverse mb-3">
@@ -50,6 +50,44 @@
         </div>
     }
 </div>
+
+@{
+    var itemsStart = (Model.Page - 1) * Model.PageSize + 1;
+    var pageNumbers = WebUtilities.Pagination(Model.Page, Model.PageCount);
+}
+<div class="text-center my-2">
+    Showing @itemsStart-@(itemsStart + Model.ItemsCount - 1) of @Model.TotalItemsCount Total Items
+</div>
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        <li class="page-item @(Model.IsPrevious ? "" : "disabled")">
+            <a class="page-link" asp-route-page="@(Model.Page - 1)">
+                Previous
+            </a>
+        </li>
+        @foreach (int i in pageNumbers)
+        {
+            if (i == -1)
+            {
+                <li class="page-item disabled"><a class="page-link" href="#">...</a></li>
+            }
+            else
+            {
+                <li class="page-item @(i == Model.Page ? "active": "")">
+                    <a class="page-link" asp-route-page="@i">
+                        @i
+                    </a>
+                </li>
+            }
+        }
+        <li class="page-item @(Model.IsNext ? "" : "disabled")">
+            <a class="page-link" asp-route-page="@(Model.Page + 1)">
+                Next
+            </a>
+        </li>
+    </ul>
+</nav>
 
 @section scripts {
     <script>
