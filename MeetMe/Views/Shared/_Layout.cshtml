@@ -51,8 +51,13 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - MeetMe - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <div class="container d-flex">
+            <div>
+                &copy; 2021 - MeetMe
+            </div>
+            <div class="ml-auto">
+                @await Component.InvokeAsync("UpcomingEvent")
+            </div>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

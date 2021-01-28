@@ -1,0 +1,12 @@
+﻿@model Meeting
+
+@if (Model == null)
+{
+    <text>No upcoming event :(</text>
+}
+else
+{
+    <text>Upcoming: @Model.Title (@Model.MeetingTime?.ToShortDateString())</text>
+}
+
+@ViewBag.saka
