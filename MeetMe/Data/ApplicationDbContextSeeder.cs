@@ -91,6 +91,7 @@ namespace MeetMe.Data
                 var userManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
                 var env = serviceProvider.GetRequiredService<IHostEnvironment>();
                 var db = serviceProvider.GetRequiredService<ApplicationDbContext>();
+                db.Database.Migrate(); // veritabanı yoksa oluştur, eksik migration varsa yap
                 await SeedRolesAndUsersAsync(roleManager, userManager);
 
                 if (env.IsDevelopment())
