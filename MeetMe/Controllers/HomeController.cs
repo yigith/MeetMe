@@ -39,6 +39,7 @@ namespace MeetMe.Controllers
                 {
                     Id = x.Id,
                     Title = x.Title,
+                    Slug = x.Slug,
                     Description = x.Description,
                     MeetingTime = x.MeetingTime,
                     PhotoPath = x.PhotoPath,

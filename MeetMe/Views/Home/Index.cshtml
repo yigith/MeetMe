@@ -29,7 +29,9 @@
                     <img src="~/img/@meeting.PhotoPath" class="meeting-img" alt="@meeting.Title">
                 }
                 <div class="card-body">
-                    <h5 class="card-title meeting-title">@meeting.Title</h5>
+                    <h5 class="card-title meeting-title">
+                        <a asp-controller="Meetings" asp-action="Details" asp-route-id="@meeting.Id" asp-route-slug="@meeting.Slug">@meeting.Title</a>
+                    </h5>
                     <p class="card-text meeting-desc mb-1">
                         @meeting.Description <br />
                     </p>
