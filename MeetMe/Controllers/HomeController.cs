@@ -100,6 +100,8 @@ namespace MeetMe.Controllers
             return View(_db.Meetings.Where(x => x.Participants.Any(p => p.Id == userId)).ToList());
         }
 
+        // https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-5.0
+        [Route("Privacy")]
         public IActionResult Privacy()
         {
             return View();

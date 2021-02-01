@@ -81,6 +81,10 @@ namespace MeetMe
                     pattern: "Admin/{controller=Dashboard}/{action=Index}/{id?}"
                 );
                 endpoints.MapControllerRoute(
+                    name: "meetingsRoute",
+                    pattern: "Events",
+                    defaults: new { controller = "Home", action = "MyMeetings" });
+                endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
